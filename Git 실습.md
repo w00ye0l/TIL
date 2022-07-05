@@ -68,3 +68,48 @@ $ git log --oneline
 6f43289 (HEAD -> master) 마크다운 정리
 ```
 
+
+
+## 4. 실습 정리
+
+```bash
+$ git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        "Git \354\213\244\354\212\265.md"
+
+nothing added to commit but untracked files present (use "git add" to 
+track)
+```
+
+```bash
+$ git add Git\ 실습.md 
+
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)  
+        new file:   "Git \354\213\244\354\212\265.md"
+```
+
+```bash
+$ git commit -m 'Git 실습 정리'
+[master d997b90] Git 실습 정리   
+ 1 file changed, 70 insertions(+)
+ create mode 100644 "Git \354\213\244\354\212\265.md"
+ 
+$ git log -1
+commit d997b907317850683e9751a1c2817a2bbd1ebdcc (HEAD -> master)
+Author: lwy <dnduf158@gmail.com>
+Date:   Tue Jul 5 16:33:21 2022 +0900
+
+    Git 실습 정리
+```
+
+```bash
+$ git status
+On branch master
+nothing to commit, working tree clean
+```
+

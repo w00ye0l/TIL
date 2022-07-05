@@ -60,6 +60,7 @@ print('hello')
 ### 2. Inline Code Block
 
 - ``(backtick)` 기호 1개를 활용하여 작성한다.
+- backtick 기호 하나만 넣어보기 => `` ` ``
 
 
 
