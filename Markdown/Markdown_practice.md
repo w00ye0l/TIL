@@ -1,128 +1,46 @@
-# 마크다운
+# Python
 
 
 
-## 제목/소제목 (Heading)
-
-- `#`의 개수에 따라 `h1`~`h6`까지 표현 가능하다.
-
-
-
-## 리스트
-
-- 순서가 없는 리스트 : `-`(Hypen), `*`(asterisk)
-- 순서가 있는 리스트 : `1.` 사용
-
-- `tab`, `shift + tab` 기호로 순위를 조정한다.
-
-
-
-## 코드 블록
-
-### 1. Fenced Code Block
-
-- ``(backtick)` 기호 3개를 활용하여 작성한다.
-- 특정 언어를 명시하면 `Syntax highlighting` 기능이 적용된다.
-
-```python
-print('hello')
-```
-
-```html
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-
-<body>
-  <h1>Hi</h1>
-  <ul>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-  </ul>
-</body>
-
-</html>
-```
-
-
-
-### 2. Inline Code Block
-
-- ``(backtick)` 기호 1개를 활용하여 작성한다.
-- backtick 기호 하나만 넣어보기 => `` ` ``
-
-
-
-## 링크
-
-- `[]()`를 활용하여 작성한다.
-- [나의 링크들](https://litt.ly/lwyeol)
-
-
-
-## 이미지
-
-- `![]()`를 활용하여 작성한다.
-
-<img src="Markdown_practice.assets/LWY.jpg" alt="LWY" style="zoom:10%;" />
-
-- 이미지를 `md 파일` 안으로 끌어넣어도 적용된다.
-- `절대경로(C드라이브)`가 아닌 `상대경로(마크다운.assets)`를 사용해야 성공적인 공유가 가능하다.
+## 1. 개요
 
 ![](https://wikidocs.net/images/page/5/pahkey_KRRKrp.png)
 
+파이썬(Python)은 1990년 암스테르담의 귀도 반 로섬(Guido Van Rossum)이 개발한 인터프리터 언어이다. 귀도는 파이썬이라는 이름을 자신이 좋아하는 코미디 쇼인 "몬티 파이썬의 날아다니는 서커스(Monty Python’s Flying Circus)"에서 따왔다고 한다.
 
-
-## 인용문
-
-- `>` 기호를 사용하여 작성한다.
-
-> Life is short, you need python.
->
-> 주로 정의할 때 사용
+> 인터프리터 언어란 한 줄씩 소스 코드를 해석해서 그때그때 실행해 결과를 바로 확인할 수 있는 언어이다.
 
 
 
-## 표
+## 2. 특징
 
-- 상단 메뉴바의 `본문 > 표 > 표 삽입 버튼(ctrl + t)`을 활용한다.
+1. **파이썬은 인간다운 언어이다. 아래 코드는 쉽게 해석된다.**
 
-- 표는 타이핑 작성이 어려워 직접 작성하지 않고 메뉴를 활용한다.
+	`if 4 in [1,2,3,4]: print("4가 있습니다")`
 
-  |      |      |
-  | ---- | ---- |
-  |      |      |
-  |      |      |
-  |      |      |
+	*만약 4가 1, 2, 3, 4 중에 있으면 "4가 있습니다"를 출력한다.* 라고 말이다.
 
 
 
-## 텍스트
+2. **파이썬은 간결하다.**
 
-- **굵게(볼드체)** : `**`
-
-- *기울임(이텔릭체)* : `*`
-
-- ~~취소선~~ : `~~`
-
-
-
-## 수평선
-
-- `***` , `---` , `___` : 수평선
-
-***
----
-___
+	```python
+    # simple.py
+    languages = ['python', 'perl', 'c', 'java']
+	
+    for lang in languages:
+        if lang in ['python', 'perl']:
+            print("%6s need interpreter" % lang)
+        elif lang in ['c', 'java']:
+            print("%6s need compiler" % lang)
+        else:
+            print("should not reach here")
+	```
 
 
 
+3. **공식문서가 자세히 제공된다.**
+
+	[파이썬 공식문서 링크](https://docs.python.org/3/)
+	
+	
