@@ -73,7 +73,7 @@ print('hello')
 
 - `![]()`를 활용하여 작성한다.
 
-<img src="Markdown_practice.assets/LWY.jpg" alt="LWY" style="zoom:10%;" />
+<img src="Markdown.assets/LWY.jpg" alt="LWY" style="zoom:10%;" />
 
 - 이미지를 `md 파일` 안으로 끌어넣어도 적용된다.
 - `절대경로(C드라이브)`가 아닌 `상대경로(마크다운.assets)`를 사용해야 성공적인 공유가 가능하다.
