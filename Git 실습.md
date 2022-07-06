@@ -7,6 +7,13 @@ $ git config --global user.name 'GitHub ID'
 $ git config --global user.email 'GitHub Email'
 ```
 
+```bash
+$ git config --global --list
+# 설정 확인 코드
+user.email=dnduf158@gmail.com
+user.name=lwy
+```
+
 
 
 ## 1. 바탕화면에 TIL 폴더를 만든다.
