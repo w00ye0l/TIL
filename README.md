@@ -4,6 +4,7 @@
 
 ## 개발자가 되기 위한 공부 (●'◡'●)
 
-- [Git](./Git) 💨
+- [Git/GitHub](./Git_GitHub) 💨
 - [Markdown](./Markdown) 💨
 
+- [Branch](./Branch) 💨
