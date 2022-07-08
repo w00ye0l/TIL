@@ -62,10 +62,18 @@
 
 ## Git 파일 관리 심화
 
-### 버전 관리와 상관 없는 파일 관리
+### 1. 버전 관리와 상관 없는 파일 관리
 
 - 일반적인 개발 프로젝트에서 버전 관리를 별도로 하지 않는 파일/디렉토리가 발생
 - Git 저장소에 `.gitignore` 파일을 생성하고 관리
+  - **이름을 바꿀 수 없음**
+
+
+```bash
+$ mkdir .gitignore
+$ git add .
+$ git commit -m "ADD .gitignore"
+```
 
 
 
@@ -85,3 +93,17 @@
   - 개발 환경
     - 운영체제 (windows, mac, linux)
     - 텍스트 에디터 / IDE (visual studio code 등)
+
+
+
+## 2. 빈 폴더 관리하는 방법
+
+- `.gitkeep`을 사용하여 빈 폴더를 관리
+  - **이름을 바꿀 수 있음**
+
+```bash
+$ mkdir 디렉토리명/.gitkeep 
+$ git add .
+$ git commit -m "ADD empty directory"
+```
+
