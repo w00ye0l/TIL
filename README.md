@@ -6,5 +6,5 @@
 
 - [Git/GitHub](./Git_GitHub) 💨
 - [Markdown](./Markdown) 💨
-
 - [Branch](./Branch) 💨
+- [Special Lecture](./SpecialLecture) 💨
