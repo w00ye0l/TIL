@@ -1,4 +1,4 @@
-# 📜마크다운(Markdown)
+# 📜특강(Special Lecture)
 
 
 
