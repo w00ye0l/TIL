@@ -8,3 +8,4 @@
 - [Markdown](./Markdown) 💨
 - [Branch](./Branch) 💨
 - [Special Lecture](./SpecialLecture) 💨
+- [Python](./Python) 💨
