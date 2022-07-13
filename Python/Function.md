@@ -153,7 +153,7 @@
 
       ```python
       def family(**kwargs):
-          for key, value in kwargs:
+          for key, value in kwargs.items():
               print(key, ":", value)
               
       family(father='John', mother='Jane', me='John Jr.')
