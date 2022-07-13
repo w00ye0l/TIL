@@ -1,6 +1,8 @@
-def cube():
-    n = int(input())
+n = int(input())
+
+
+def cube(n):
     return n**3
 
 
-print(cube())
+print(cube(n))
