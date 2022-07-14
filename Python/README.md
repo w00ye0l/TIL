@@ -11,3 +11,4 @@
 | Container         | [Container.md](./Container.md)               | 컨테이너                                    |
 | Control Statement | [ControlStatement.md](./ControlStatement.md) | 파이썬 기본 문법<br />파이썬 조건문, 반복문 |
 | Function          | [Function.md](./Function.md)                 | 파이썬 함수                                 |
+| Data Structure | [DataStructure.md](./DataStructure.md) | 데이터 구조<br /> 메서드, 함수 |
