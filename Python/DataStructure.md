@@ -179,7 +179,6 @@
       # []
       ```
   
-
 - 탐색 및 정렬
 
   - .index(x)
@@ -283,20 +282,25 @@
 
     ```python
     my_dict = {'a': 1, 'b': 2}
-    data = my_dict('a')
+    data = my_dict.pop('a')
     print(data, my_dict)
     # 1 {'b': 2}
+    
+    my_dict = {'a': 1, 'b': 2}
+    data = my_dict.pop('c')
+    print(data, my_dict)
+    # 에러 발생
     ```
-
+  
   - .update([other])
-
+  
     - 값을 제공하는 key, value로 덮어씀
-
+  
     ```python
     my_dict = {'a': 1, 'b': 2}
     my_dict.update(a= 3)
     print(my_dict)
     # {'a': 3, 'b': 2}
     ```
-
+  
     
