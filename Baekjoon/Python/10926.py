@@ -1,0 +1,2 @@
+arr = input()
+print(arr+"??!")
