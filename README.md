@@ -14,3 +14,6 @@
 ### ✏ 알고리즘 문제 풀이 🧡
 - [Codeup](./Codeup) 💨
 - [Python Practice](./PythonPractice) 💨
+
+### ✏ 프로젝트 💛
+- [Project](./Project) 💨
