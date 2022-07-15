@@ -13,6 +13,7 @@
 
 ### ✏ 알고리즘 문제 풀이 🧡
 - [Codeup](./Codeup) 💨
+- [Baekjoon](./Baekjoon) 💨
 - [Python Practice](./PythonPractice) 💨
 
 ### ✏ 프로젝트 💛
