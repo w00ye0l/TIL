@@ -13,3 +13,4 @@
 | Function          | [Function.md](./Function.md)                 | 파이썬 함수                                 |
 | Data Structure | [DataStructure.md](./DataStructure.md) | 데이터 구조<br /> 메서드, 함수 |
 | Module | [Module.md](./Module.md) | 모듈, 패키지<br /> 파일 관리 |
+| Algorithm | [Algorithm.md](./Algorithm.md) | 알고리즘 해결 팁 |
