@@ -1,18 +1,15 @@
 n, m = map(int, input().split())
 n_arr = []
-m_arr = []
 
 for i in range(n):
-    n_arr[i] = input()
+    s = input().split()
+    n_arr.append(s)
 
-for j in range(m):
-    n_arr[j] = input()
-
-min = n if n <= m else m
 cnt = 0
 
-for k in range(min):
-    if n_arr[i] == m_arr[i]:
+for j in range(m):
+    s = input().split()
+    if s in n_arr:
         cnt += 1
 
 print(cnt)
