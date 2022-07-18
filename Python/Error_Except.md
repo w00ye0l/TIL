@@ -82,7 +82,7 @@
     ```
 -	IndentationError : Indentation이 적절하지 않는 경우
     ```python
-    for I in range(3):
+    for i in range(3):
     Print(i)
     ```
 -	KeyboardInterrupt : 임의로 프로그램을 종료하였을 때
