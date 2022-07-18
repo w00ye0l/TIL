@@ -72,7 +72,7 @@
     song = {'IU': '좋은날'}
     song['BTS']
     ```
--	`ModuleNotFoundError : 존재하지 않는 모듈을 import 하는 경우
+-	`ModuleNotFoundError` : 존재하지 않는 모듈을 import 하는 경우
     ```python
     import nonamed
     ```
