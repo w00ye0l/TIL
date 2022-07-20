@@ -14,5 +14,5 @@
 | Data Structure | [DataStructure.md](./DataStructure.md) | 데이터 구조<br /> 메서드, 함수 |
 | Module | [Module.md](./Module.md) | 모듈, 패키지<br /> 파일 관리 |
 | Error_Except | [Error_Except.md](./Error_Except.md) | 파이썬 오류/예외 처리 |
-| OOP | [OOP.md](./OOP.md) | 객체지향 프로그래밍(Object Oriented Programming) |
+| OOP | [OOP.md](./OOP.md)<br />[OOP(2).md](./OOP(2).md) | 객체지향 프로그래밍(Object Oriented Programming) |
 | Algorithm | [Algorithm.md](./Algorithm.md) | 알고리즘 해결 팁 |
