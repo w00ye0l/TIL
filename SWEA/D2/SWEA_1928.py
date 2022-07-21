@@ -13,10 +13,10 @@ for i in range(1, t + 1):
     arr = input()
     re = ""
     for a in arr:
-        re += "".join(format(dic[a], 'b').zfill(6))
+        re += f'{dic[a]:06b}'
 
     result = ""
     for j in range(0, len(re), 8):
-        result += chr(int(re[i:i + 8], 2))
+        result += chr(int(re[j:j + 8], 2))
 
     print(f'#{i} {result}')
