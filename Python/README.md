@@ -17,4 +17,6 @@
 | OOP | [OOP.md](./OOP.md)<br />[OOP(2).md](./OOP(2).md) | 객체지향 프로그래밍(Object Oriented Programming) |
 | Deep Python       | [DeepPython.md](./DeepPython.md)                 | 파이썬 응용/심화<br />모듈 응용/심화             |
 | API               | [API.md](./API.md)                               | 파이썬 API                                       |
+| AlgorithmIntro | [AlgorithmIntro.md](./AlgorithmIntro.md) | 알고리즘 Intro |
 | Algorithm | [Algorithm.md](./Algorithm.md) | 알고리즘 해결 팁 |
+| InputOutput | [InputOutput.md](./InputOutput.md) | 파이썬 입출력 |
