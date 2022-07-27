@@ -3,24 +3,13 @@ t = int(input())
 for i in range(1, t + 1):
     n = int(input())
     arr = list(map(int, input().split()))
+    max_ = arr[-1]
     earn = 0
-    l = len(arr)
 
-    while l:
-        idx = 0
-        max = 0
-        cost = 0
-
-        for j in range(l):
-            if arr[j] > max:
-                max = arr[j]
-                idx = j
-
-        for k in range(idx):
-            cost += arr[k]
-
-        earn += max * idx - cost
-        arr = arr[idx + 1:]
-        l -= idx + 1
+    for j in range(n - 2, -1, -1):
+        if arr[j] >= max_:
+            max_ = arr[j]
+        else:
+            earn += max_ - arr[j]
 
     print(f'#{i} {earn}')
