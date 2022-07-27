@@ -21,7 +21,7 @@
 
 <br />
 
-# 파이썬의 리스트
+# 2. 파이썬의 리스트
 
 > 배열의 **인덱스 접근** + 연결 리스트의 **가변 길이**
 >
@@ -52,4 +52,33 @@
 | min(*iterable*)      | 리스트의 원소 중 **최솟값**을 반환                           | O(n)        |
 | sorted(*iterable*)   | 오름차순으로 **정렬**된 새로운 리스트 반환<br/ >원본 리스트 변화 없음 | O(n log n)  |
 | reversed(*iterable*) | 리스트의 순서를 **거꾸로 뒤집은** 새로운 객체 반환<br />원본 리스트 변화 없음 | O(n)        |
+
+<br/>
+
+# 3. 리스트 컴프리헨션 (List Comprehension)
+
+> List Comprehension(리스트 컴프리헨션, 리스트 내포)란 코드 한 줄만으로 새로운 리스트를 만드는  방법
+
+```python
+numbers = []
+for i in range(5):
+    numbers.append(i)
+    
+print(numbers)
+# [0, 1, 2, 3, 4]
+
+#####################
+
+numbers = [i for i in range(5)]
+
+print(numbers)
+# [0, 1, 2, 3, 4]
+
+#####################
+
+odd_numbers = [i for i in range(10) if i % 2 == 1]
+
+print(odd_numbers)
+# [1, 3, 5, 7, 9]
+```
 
