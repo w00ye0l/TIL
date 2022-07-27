@@ -20,5 +20,6 @@
 | AlgorithmIntro | [AlgorithmIntro.md](./AlgorithmIntro.md) | 알고리즘 Intro |
 | InputOutput | [InputOutput.md](./InputOutput.md) | 파이썬 입출력 |
 | List | [List.md](./List.md) | 파이썬 List |
-| TimeComplexity | [TimeComplexity.md](./TimeComplexity.md) | 파이썬 시간복잡도 |
-| Algorithm | [Algorithm.md](./Algorithm.md) | 알고리즘 해결 팁 |
+| String            | [String.md](./String.md)                         | 파이썬 String                                    |
+| TimeComplexity    | [TimeComplexity.md](./TimeComplexity.md)         | 파이썬 시간복잡도                                |
+| Algorithm         | [Algorithm.md](./Algorithm.md)                   | 알고리즘 해결 팁 |
