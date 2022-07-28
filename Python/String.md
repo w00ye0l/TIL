@@ -49,9 +49,7 @@ print(word.split())
 # ['apple', 'banana', 'orange', 'grape']
 ```
 
-
-
-### 2). strip(제거할 문자)
+### 2) .strip(제거할 문자)
 
 > 문자열의 **양쪽 끝**에 있는 특정 문자를 모두 제거한 새로운 문자열 반환
 >
@@ -77,7 +75,7 @@ print(word.strip('Hd'))
 # 'ello Worl'
 ```
 
-### 3). find(찾는 문자)
+### 3) .find(찾는 문자)
 
 > 특정 문자가 처음으로 나타나는 위치(인덱스)를 반환
 >
