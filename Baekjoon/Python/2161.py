@@ -1,13 +1,13 @@
+from collections import deque
+
 n = int(input())
-arr = [str(i) for i in range(1, n + 1)]
+arr = deque([str(i) for i in range(1, n + 1)])
 result = []
 
-for i in range(n):
-    p = arr.pop(0)
-    result.append(p)
+while len(arr) != 1:
+    result.append(arr.popleft())
+    arr.append(arr.popleft())
 
-    if arr:
-        pp = arr.pop(0)
-        arr.append(pp)
+result.append(arr.pop())
 
-print(' '.join(result))
+print(*result)
