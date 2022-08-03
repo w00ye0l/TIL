@@ -6,11 +6,10 @@ for _ in range(n):
     s = input()
 
     if s == 'ENTER':
-        sum_ += len(name)
-        name = set()
+        name.clear()
     else:
-        name.add(s)
-
-sum_ += len(name)
+        if s not in name:
+            name.add(s)
+            sum_ += 1
 
 print(sum_)
