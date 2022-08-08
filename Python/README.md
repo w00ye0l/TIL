@@ -34,3 +34,4 @@
 | Stack & Queue   | [Stack_Queue.md](./Algorithm/Stack_Queue.md)       | 파이썬 Stack & Queue |
 | Heap & Set      | [Heap_Set.md](./Algorithm/Heap_Set.md)             | 파이썬 Heap & Set    |
 | 2D list         | [2D_list.md](./Algorithm/2D_list.md)               | 파이썬 2차원 리스트   |
+| Exhaustive Search1 | [ExhaustiveSearch1.md](./Algorithm/ExhaustiveSearch1.md)               | 파이썬 완전 탐색 1   |
