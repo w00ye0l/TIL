@@ -1,31 +1,24 @@
 import math
 
-yumi = []
-check = [0 for _ in range(4)]
 
-for i in range(4):
-    yumi.append(list(map(int, input().split())))
+def cal_dis(a, b):
+    return math.sqrt(((a[0] - b[0]) ** 2) + ((a[1] - b[1]) ** 2))
 
-i = 0
-cnt = 0
-result = 0
-while cnt != 4:
-    min_ = math.inf
-    min_idx = 0
-    check[i] = 1
 
-    for j in range(4):
-        if check[j] == 0:
-            dis = math.sqrt((yumi[i][0] - yumi[j][0]) **
-                            2 + (yumi[i][1] - yumi[j][1]) ** 2)
-            if dis < min_:
-                min_ = dis
-                min_idx = j
+crd = []
+for _ in range(4):
+    crd.append(list(map(int, input().split())))
 
-    i = min_idx
-    if min_ != math.inf:
-        result += min_
+result = []
+for i in range(1, 4):
+    for j in range(1, 4):
+        for k in range(1, 4):
+            dis = 0
+            if i != j and j != k and k != i:
+                dis += cal_dis(crd[0], crd[i])
+                dis += cal_dis(crd[i], crd[j])
+                dis += cal_dis(crd[j], crd[k])
 
-    cnt += 1
+                result.append(dis)
 
-print(math.floor(result))
+print(int(min(result)))
