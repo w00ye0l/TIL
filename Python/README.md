@@ -36,3 +36,5 @@
 | 2D list            | [2D_list.md](./Algorithm/2D_list.md)                      | 파이썬 2차원 리스트   |
 | Exhaustive Search1 | [ExhaustiveSearch1.md](./Algorithm/ExhaustiveSearch1.md)  | 파이썬 완전 탐색 1    |
 | Graph              | [Graph.md](./Algorithm/Graph.md)                          | 파이썬 그래프         |
+| DFS                | [DFS.md](./Algorithm/DFS.md)                              | 파이썬 DFS           |
+| Coding Test        | [CodingTest.md](./Algorithm/CodingTest.md)                | 코딩 테스트 준비      |
