@@ -107,7 +107,7 @@
 
 <br/>
 
-```sqlite
+```sql
 -- 데이터베이스 생성하기
 .database
 
@@ -136,7 +136,7 @@ SELECT * FROM examples;
 
 <br/>
 
-```sqlite
+```sql
 -- classmates라는 이름의 테이블 생성
 CREATE TABLE classmates (
     id INTEGER PRIMARY KEY,
@@ -165,7 +165,7 @@ INSERT INTO classmates VALUES (2, '이동희');
 DROP TABLE classmates;
 ```
 
-```sqlite
+```sql
 -- 예제
 CREATE TABLE classmates (
     name TEXT,
@@ -234,7 +234,7 @@ CREATE TABLE classmates (
   - DISTINCT 절은 SELECT 키워드 바로 뒤에 작성해야 함
 
 
-```sqlite
+```sql
 -- 하나의 컬럼 값을 조회
 SELECT 컬럼1, 컬럼2, ... FROM 테이블이름 LIMIT 1;
 
@@ -256,7 +256,7 @@ SELECT 컬럼1, 컬럼2, ... FROM 테이블이름 LIMIT 1 OFFSET 2;
 
 - UPDATE
 
-  ```sqlite
+  ```sql
   UPDATE classmates SET address = '서울' WHERE rowid = 5;
   ```
 
@@ -266,7 +266,7 @@ SELECT 컬럼1, 컬럼2, ... FROM 테이블이름 LIMIT 1 OFFSET 2;
 
 - DELETE
 
-  ```sqlite
+  ```sql
   DELETE FROM classmates WHERE rowid = 5;
   ```
 
