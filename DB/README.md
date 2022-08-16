@@ -6,7 +6,7 @@
 
 <br/>
 
-| Title | Link             | Contents |
-| ----- | ---------------- | -------- |
-| DB    | [DB.md](./DB.md) | DB 이론  |
+| Title | Link                         | Contents |
+| ----- | ---------------------------- | -------- |
+| DB    | [Database.md](./Database.md) | DB 이론  |
 
