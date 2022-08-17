@@ -107,7 +107,7 @@
 
 <br/>
 
-```sql
+```sqlite
 -- 데이터베이스 생성하기
 .database
 
@@ -136,7 +136,7 @@ SELECT * FROM examples;
 
 <br/>
 
-```sql
+```sqlite
 -- classmates라는 이름의 테이블 생성
 CREATE TABLE classmates (
     id INTEGER PRIMARY KEY,
@@ -165,7 +165,7 @@ INSERT INTO classmates VALUES (2, '이동희');
 DROP TABLE classmates;
 ```
 
-```sql
+```sqlite
 -- 예제
 CREATE TABLE classmates (
     name TEXT,
@@ -234,7 +234,7 @@ CREATE TABLE classmates (
   - DISTINCT 절은 SELECT 키워드 바로 뒤에 작성해야 함
 
 
-```sql
+```sqlite
 -- 하나의 컬럼 값을 조회
 SELECT 컬럼1, 컬럼2, ... FROM 테이블이름 LIMIT 1;
 
@@ -256,7 +256,9 @@ SELECT 컬럼1, 컬럼2, ... FROM 테이블이름 LIMIT 1 OFFSET 2;
 
 - UPDATE
 
-  ```sql
+  - `UPDATE 테이블이름 SET 컬럼1=값1, 컬럼2=값2 WHERE 조건;`
+  
+  ```sqlite
   UPDATE classmates SET address = '서울' WHERE rowid = 5;
   ```
 
@@ -266,8 +268,59 @@ SELECT 컬럼1, 컬럼2, ... FROM 테이블이름 LIMIT 1 OFFSET 2;
 
 - DELETE
 
-  ```sql
+  - `DELETE FROM 테이블이름 WHERE 조건;`
+  
+  ```sqlite
   DELETE FROM classmates WHERE rowid = 5;
   ```
 
 <br/>
+
+## 세부 코드 알아보기
+
+## 0. WHERE
+
+- WHERE 절에서 사용할 수 있는 연산자
+
+  - 비교 연산자
+    - `=, >, >= , <, <=` 는 숫자 혹은 문자 값의 대/소, 동일 여부를 확인하는 연산자
+  - 논리 연산자
+    - `AND`
+      - 앞에 있는 조건과 뒤에 오는 조건이 모두 참인 경우
+    - `OR`
+      - 앞의 조건이나 뒤의 조건이 참인 경우
+    - `NOT`
+      - 뒤에 오는 조건의 결과를 반대로
+
+- **주의!**
+
+  ```sql
+  -- 1. 키가 175이거나, 키가 183이면서 몸무게가 80인 사람
+  WHERE HEIGHT = 175 OR HEIGHT = 183 AND WEIGHT 80
+  -- 2. 키가 175 또는 183인 사람 중에서 몸무게가 80인 사람
+  WHERE (HEIGHT = 175 OR HEIGHT = 183) AND WEIGHT 80
+  ```
+
+<br/>
+
+- SQL 사용할 수 있는 연산자
+  - `BETWEEN 값1 AND 값2`
+    - 값1과 값2 사이의 비교 (값1 <= 비교값 <= 값2)
+  - `IN (값1, 값2, ...)`
+    - 목록 중에 값이 하나라도 일치하면 성공
+  - `LIKE`
+    - 비교 문자열과 형태 일치
+    - 와일드카드 (% : 0개 이상 문자, _ : 1개 단일 문자)
+  - `IS NULL / IS NOT NULL`
+    - NULL 여부를 확인할 때는 항상 = 대신에 IS를 활용
+  - `부정 연산자`
+    - 같지 않다. `(!=, ^=, <>)`
+    - ~와 같지 않다. `(NOT 칼럼명 = )`
+    - ~보다 크지 않다. `(NOT 칼럼명 > )`
+- 연산자 우선순위
+  - **1순위 : 괄호 ()**
+  - 2순위 : NOT
+  - 3순위 : 비교 연산자, SQL
+  - 4순위 : AND
+  - 5순위 : OR
+
