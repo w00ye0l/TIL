@@ -55,13 +55,13 @@
 
 ### 0.0. SQLite Data Type
 
-1. NULL
-2. INTEGER
+1. `NULL`
+2. `INTEGER`
    - 크기에 따라 0, 1, 2, 3, 4, 6 또는 8바이트에 저장된 부호 있는 정수
-3. REAL
+3. `REAL`
    - 8바이트 부동 소수점 숫자로 저장된 부동 소수점 값
-4. TEXT
-5. BLOB
+4. `TEXT`
+5. `BLOB`
    - 입력된 그대로 정확히 저정된 데이터 (별 다른 타입 없이 그대로 저장)
 
 <br/>
@@ -70,11 +70,11 @@
 
 > 특정 컬럼에 저장하도록 권장하는 데이터 타입
 
-1. INTEGER
-2. TEXT
-3. BLOB
-4. REAL
-5. NUMERIC
+1. `INTEGER`
+2. `TEXT`
+3. `BLOB`
+4. `REAL`
+5. `NUMERIC`
 
 <br/>
 
@@ -100,14 +100,14 @@
 
 ## SQL Keywords - Data Manipulation Language
 
-- INSERT : 새로운 데이터 삽입(추가)
-- SELECT : 저장되어있는 데이터 조회
-- UPDATE : 저장되어있는 데이터 갱신
-- DELETE : 저장되어있는 데이터 삭제
+- `INSERT` : 새로운 데이터 삽입(추가)
+- `SELECT` : 저장되어있는 데이터 조회
+- `UPDATE` : 저장되어있는 데이터 갱신
+- `DELETE` : 저장되어있는 데이터 삭제
 
 <br/>
 
-```sqlite
+```sql
 -- 데이터베이스 생성하기
 .database
 
@@ -136,7 +136,7 @@ SELECT * FROM examples;
 
 <br/>
 
-```sqlite
+```sql
 -- classmates라는 이름의 테이블 생성
 CREATE TABLE classmates (
     id INTEGER PRIMARY KEY,
@@ -165,7 +165,7 @@ INSERT INTO classmates VALUES (2, '이동희');
 DROP TABLE classmates;
 ```
 
-```sqlite
+```sql
 -- 예제
 CREATE TABLE classmates (
     name TEXT,
@@ -178,12 +178,12 @@ CREATE TABLE classmates (
 
 ### 필드 제약 조건
 
-- NOT NULL : NULL 값 입력 금지
-- UNIQUE : 중복 값 입력 금지 (NULL 값은 중복 입력 가능)
-- PRIMARY KEY : 테이블에서 반드시 하나. NOT NULL + UNIQUE
-- FOREIGN KEY : 외래키, 다른 테이블의 Key
-- CHECK : 조건으로 설정된 값만 입력 허용
-- DEFAULT : 기본 설정 값 
+- `NOT NULL` : NULL 값 입력 금지
+- `UNIQUE` : 중복 값 입력 금지 (NULL 값은 중복 입력 가능)
+- `PRIMARY KEY` : 테이블에서 반드시 하나. NOT NULL + UNIQUE
+- `FOREIGN KEY` : 외래키, 다른 테이블의 Key
+- `CHECK` : 조건으로 설정된 값만 입력 허용
+- `DEFAULT` : 기본 설정 값 
 
 <br/>
 
@@ -234,7 +234,7 @@ CREATE TABLE classmates (
   - DISTINCT 절은 SELECT 키워드 바로 뒤에 작성해야 함
 
 
-```sqlite
+```sql
 -- 하나의 컬럼 값을 조회
 SELECT 컬럼1, 컬럼2, ... FROM 테이블이름 LIMIT 1;
 
@@ -258,7 +258,7 @@ SELECT 컬럼1, 컬럼2, ... FROM 테이블이름 LIMIT 1 OFFSET 2;
 
   - `UPDATE 테이블이름 SET 컬럼1=값1, 컬럼2=값2 WHERE 조건;`
   
-  ```sqlite
+  ```sql
   UPDATE classmates SET address = '서울' WHERE rowid = 5;
   ```
 
@@ -270,7 +270,7 @@ SELECT 컬럼1, 컬럼2, ... FROM 테이블이름 LIMIT 1 OFFSET 2;
 
   - `DELETE FROM 테이블이름 WHERE 조건;`
   
-  ```sqlite
+  ```sql
   DELETE FROM classmates WHERE rowid = 5;
   ```
 
