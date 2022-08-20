@@ -17,7 +17,7 @@ SELECT
     CASE
         WHEN gender = 1 THEN "남자"
         WHEN gender = 2 THEN "여자"
-   	END AS 성별
+    END AS 성별
 FROM users;
 
 -- 예제: 나이에 따라서 구분
