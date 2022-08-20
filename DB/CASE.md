@@ -17,7 +17,7 @@ SELECT
     CASE
         WHEN gender = 1 THEN "남자"
         WHEN gender = 2 THEN "여자"
-   	    END AS 성별
+   	END AS 성별
 FROM users;
 
 -- 예제: 나이에 따라서 구분
@@ -87,7 +87,7 @@ FROM users;
       SELECT country
       FROM users
       WHERE
-          last_name = "유",
+          last_name = "유" AND
           first_name = "은정"
   );
   
@@ -123,7 +123,7 @@ FROM users;
       SELECT country
       FROM users
       WHERE 
-          last_name = "이",
+          last_name = "이" AND
           first_name = "은정"
   );
   ```
