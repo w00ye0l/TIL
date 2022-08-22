@@ -187,7 +187,7 @@ SELECT
     invoices.InvoiceId
 FROM invoice_items INNER JOIN invoices
     ON invoice_items.InvoiceId = invoices.InvoiceId
-ORDER BY invoices.InvoiceId DESC
+ORDER BY invoice_items.InvoiceId DESC
 LIMIT 5;
 ```
 
@@ -195,10 +195,10 @@ LIMIT 5;
 InvoiceLineId  InvoiceId
 -------------  ---------
 2240           412
-2226           411
-2227           411
-2228           411
-2229           411
+2239           411
+2238           411
+2237           411
+2236           411
 ```
 
 
