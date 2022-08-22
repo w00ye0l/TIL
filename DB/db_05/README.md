@@ -298,7 +298,7 @@ CustomerId  개수
 55          7
 ```
 
-### 15. 각 Artist가 낸 tracks의 수, 트랙 수 기준 내림차순, 10개
+### 15. ArtistId, Name, 각 Artist가 낸 tracks의 수 출력, 트랙 수 기준 내림차순, 10개
 
 ```sql
 SELECT
@@ -346,7 +346,114 @@ ArtistId  Name             트랙 수
 156       The Office       53
 ```
 
+### 16. 각 나라 Country 별 고객의 수를 내림차순으로 출력하세요. LIMIT 5
 
+```sql
+SELECT
+    Country,
+    COUNT(*) AS "고객 수"
+FROM customers
+GROUP BY Country
+ORDER BY "고객 수" DESC
+LIMIT 5;
+```
 
+```
+Country  고객 수
+-------  ----
+USA      13
+Canada   8
+France   5
+Brazil   5
+Germany  4
+```
 
+### 17. 각 나라 County 별 주문 건수를 건수 기준으로 내림차순으로 출력하세요. LIMIT 10
 
+```sql
+SELECT
+    BillingCountry,
+    COUNT(*) AS "주문 건수"
+FROM invoices
+GROUP BY BillingCountry
+ORDER BY "주문 건수" DESC
+LIMIT 10;
+```
+
+```
+BillingCountry  주문 건수
+--------------  -----
+USA             91
+Canada          56
+France          35
+Brazil          35
+Germany         28
+United Kingdom  21
+Portugal        14
+Czech Republic  14
+India           13
+Sweden          7
+```
+
+### 17-1. 각 나라 County 별 주문한 물건 개수를 기준으로 내림차순으로 출력하세요. LIMIT 10
+
+```sql
+SELECT
+    C.Country,
+    COUNT(*) AS "주문 물건 개수"
+FROM customers AS C
+    INNER JOIN invoices AS I
+        ON C.CustomerId = I.CustomerId
+    INNER JOIN invoice_items AS II
+        ON I.InvoiceId = II.InvoiceId
+GROUP BY C.Country
+ORDER BY "주문 물건 개수" DESC
+LIMIT 10;
+```
+
+```
+Country         주문 물건 개수
+--------------  --------
+USA             494
+Canada          304
+France          190
+Brazil          190
+Germany         152
+United Kingdom  114
+Portugal        76
+Czech Republic  76
+India           74
+Sweden          38
+```
+
+### 18. 2010년에 주문한 각 나라 Country 별 주문 건수를 건수를 기준으로 내림차순으로 출력하세요. LIMIT 10
+
+```sql
+SELECT
+    C.Country,
+    COUNT(*) AS "주문 건수"
+FROM customers AS C
+    INNER JOIN invoices AS I
+        ON C.CustomerId = I.CustomerId
+    INNER JOIN invoice_items AS II
+        ON I.invoiceId = II.invoiceId
+WHERE I.InvoiceDate LIKE "2010%"
+GROUP BY C.Country
+ORDER BY "주문 건수" DESC
+LIMIT 10;
+```
+
+```
+Country         주문 건수
+--------------  -----
+USA             102
+Canada          74
+France          40
+Brazil          40
+United Kingdom  31
+Germany         26
+Hungary         25
+Austria         23
+India           17
+Argentina       12
+```
