@@ -34,7 +34,7 @@
 
 - **OUTER JOIN** : 동일한 값이 없는 행도 반환
 
-  - **LEFT OUTER JOIN** : `A -B`
+  - **LEFT OUTER JOIN** : `A - B`
   - **RIGHT OUTER JOIN** : `B - A`
   - **FULL OUTER JOIN** : `A ∪ B`
 
