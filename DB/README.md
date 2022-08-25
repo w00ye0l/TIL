@@ -15,3 +15,5 @@
 | JOIN                | [JOIN.md](./JOIN.md)                             | JOIN<br />(INNER JOIN, OUTER JOIN, CROSS JOIN) |
 | Modeling            | [Modeling.md](./Modeling.md)                     | Modeling<br />정규화                           |
 | ORM                 | [ORM.md](./ORM.md)                               | ORM (Object Relational Mapping)                |
+| QuerySet API        | [QuerySet_API.md](./QuerySet_API.md)             | QuerySet API                                   |
+| ORM Extensions      | [ORM_Extensions.md](./ORM_Extensions.md)         | ORM 확장 (1:N)                                 |
