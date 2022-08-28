@@ -16,7 +16,6 @@ def dfs():
 
             if ny < n and nx < n:
                 if not visited[ny][nx]:
-                    visited[ny][nx] = 1
                     stack.append((ny, nx))
 
     return
