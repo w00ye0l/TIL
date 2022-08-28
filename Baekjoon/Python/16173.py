@@ -8,8 +8,7 @@ def dfs():
 
     while stack:
         (y, x) = stack.pop()
-        cnt = 1
-        visited[y][x] = cnt
+        visited[y][x] = 1
 
         for i in range(2):
             ny = y + (dy[i] * board[y][x])
@@ -17,8 +16,7 @@ def dfs():
 
             if ny < n and nx < n:
                 if not visited[ny][nx]:
-                    cnt += 1
-                    visited[ny][nx] = cnt
+                    visited[ny][nx] = 1
                     stack.append((ny, nx))
 
     return
