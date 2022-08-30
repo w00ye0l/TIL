@@ -50,7 +50,10 @@ body {
 }
 
 .product-detail {
+    width: 280px;
+    position: absolute;
     padding: 0 10px;
+    box-sizing: border-box;
     text-align: left;
     letter-spacing: -1px;
 }
