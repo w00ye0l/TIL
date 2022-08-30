@@ -1,0 +1,61 @@
+/* 아래에 CSS를 작성해주세요. */
+* {
+    font-family: 'Open Sans', sans-serif;
+}
+
+body {
+    background-color: #5fa8d3;
+}
+
+.product {
+    margin: 0 auto;
+    padding: 10px;
+    width: 300px;
+    height: 480px;
+    background-color: #edf6f9;
+    border-radius: 10px;
+}
+
+.product-image {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.product-detail {
+    padding: 10px;
+    text-align: left;
+    letter-spacing: -1px;
+}
+
+.maker {
+    margin: 0;
+    font-size: 14px;
+    color: dimgray;
+}
+
+.product-name {
+    margin: 0;
+}
+
+.price {
+    margin: 0;
+    font-size: 30px;
+    font-weight: 800;
+}
+
+.sale {
+    margin: 0 10px 0 0;
+    color: cornflowerblue;
+}
+
+.review {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 600;
+    color: dimgray;
+}
+
+.score {
+    margin: 0 10px 0 0;
+    color: black;
+}
