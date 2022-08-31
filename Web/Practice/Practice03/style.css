@@ -1,0 +1,113 @@
+/* 아래에 CSS를 작성해주세요. */
+* {
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #8a817c;
+}
+
+.headers {
+    margin: 0 auto;
+    position: sticky;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    background-color: #bcb8b1;
+}
+
+.title {
+    margin: 0;
+    text-align: center;
+    letter-spacing: -1px;
+}
+
+.sub-title {
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+    font-size: 12px;
+}
+
+.navigation {
+    display: flex;
+    justify-content: center;
+}
+
+.nav-attribute {
+    margin: 0 30px;
+    padding: 20px;
+}
+
+.product-list {
+    width: 1100px;
+    margin: 20px auto;
+    display: flex;
+    justify-content: space-around;
+    align-content: space-around;
+    flex-wrap: wrap;
+    border-radius: 10px;
+    background-color: #bcb8b1;
+}
+
+.product {
+    margin: 20px;
+    width: 320px;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    border-radius: 10px;
+    background-color: #f4f3ee;
+}
+
+.product-image {
+    margin: 10px;
+    align-self: center;
+    width: 95%;
+    border-radius: 1em;
+}
+
+.product-detail {
+    width: 280px;
+    align-self: center;
+    padding: 0 10px;
+    text-align: left;
+    letter-spacing: -1px;
+}
+
+.category {
+    margin: 5px 0;
+    font-size: 12px;
+    color: dimgray;
+}
+
+.product-name {
+    margin: 0 0 15px;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.product-information {
+    color: dimgray;
+    font-weight: 500;
+    font-size: 11px;
+    letter-spacing: -1px;
+    line-height: 20px;
+}
+
+.top-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    background-color: #3d3d3d;
+    border-radius: 50%;
+    color: #c7c7c0;
+    justify-content: center;
+    align-items: center;
+}
