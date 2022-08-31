@@ -20,13 +20,12 @@ body {
 }
 
 .title {
-    margin: 0;
+    margin: 10px;
     text-align: center;
     letter-spacing: -1px;
 }
 
 .sub-title {
-    margin-bottom: 10px;
     letter-spacing: 2px;
     font-size: 12px;
 }
@@ -34,11 +33,12 @@ body {
 .navigation {
     display: flex;
     justify-content: center;
+    border-top: 1px solid black;
 }
 
 .nav-attribute {
     margin: 0 30px;
-    padding: 20px;
+    padding: 10px 20px 10px;
 }
 
 .product-list {
