@@ -13,3 +13,4 @@
 | CSS Style     | [CSS_Style.md](CSS_Style.md)           | CSS 기본 스타일                                            |
 | CSS Selectors | [CSS_Selectors.md](./CSS_Selectors.md) | CSS Selector<br />CSS Box model<br />CSS Display           |
 | CSS Position  | [CSS_Position.md](./CSS_Position.md)   | CSS Position<br />CSS Layout(Flexbox)                      |
+| Semantic Tag  | [SemanticTag.md](./SemanticTag.md)     | Semantic Tag(시맨틱 태그)                                  |
