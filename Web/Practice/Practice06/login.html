@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/_reset.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+  <title>LOGIN</title>
+</head>
+
+<body>
+  <header class="p-3 position-sticky top-0 d-flex justify-content-between align-items-center bg-light">
+    <h1 class="m-0 fs-4"><a class="text-decoration-none text-black" href="./index.html">APPAREL SHOP</a></h1>
+    <ul class="d-flex flex-row fs-5 m-0">
+      <li class="px-3"><a class="text-decoration-none text-black" href="./index.html">HOME</a></li>
+      <li class="px-3"><a class="text-decoration-none text-black" href="./products.html">PRODUCTS</a></li>
+      <li class="px-3"><a class="text-decoration-none text-black" href="#">LOGIN</a></li>
+    </ul>
+  </header>
+  <section class="section d-flex flex-column justify-content-center align-items-center">
+    <form class="rounded-5 p-xxl-5 bg-info d-flex flex-column justify-content-center bg-opacity-10">
+      <h1 class="text-center text-info fs-1 fw-bold">APPAREL SHOP</h1>
+      <h4 class="pb-xl-5 text-center text-dark fw-bold">쇼핑몰</h4>
+      <div class="m-3 d-flex justify-content-between">
+        <label class="pe-3 fs-5" for="id">이메일</label>
+        <input class="fs-5" id="id" type="email">
+      </div>
+      <hr>
+      <div class="m-3 d-flex justify-content-between">
+        <label class="pe-3 fs-5" for="password">비밀번호</label>
+        <input class="fs-5" id="password" type="password">
+      </div>
+      <hr>
+      <div class="w-100">
+        <input class="mt-5 w-100 btn btn-primary fs-3" type="submit" value="LOGIN">
+      </div>
+    </form>
+  </section>
+</body>
+
+</html>
