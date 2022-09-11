@@ -1,19 +1,13 @@
-from itertools import permutations
-
-
 def solution(numbers):
     answer = ''
-    temp = []
 
-    result = list(permutations(numbers))
+    num = list(map(str, numbers))
 
-    for r in result:
-        temp.append(''.join(list(map(str, r))))
+    num.sort(key=lambda x: x * 3, reverse=True)
 
-    temp.sort()
-    answer = temp[-1]
+    answer = ''.join(num)
 
-    return answer
+    return str(int(answer))
 
 
-print(solution([3, 30, 34, 5, 9]))
+print(solution([0, 0, 0]))
