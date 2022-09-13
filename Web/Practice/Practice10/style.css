@@ -1,0 +1,15 @@
+@media (max-width: 992px) {
+  .movietable {
+    display: none;
+  }
+}
+
+@media (min-width: 992px) {
+  .moviecard {
+    display: none;
+  }
+}
+
+.logo {
+  height: 50px;
+}
