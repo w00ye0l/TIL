@@ -20,4 +20,4 @@
 | Bootstrap Grid   | [Bootstrap_Grid.md](./Bootstrap_Grid.md)     | Bootstrap Layout<br />(Grid)                                 |
 | Bootstrap Forms  | [Bootstrap_Forms.md](./Bootstrap_Forms.md)   | Bootstrap Forms<br />(Form control)                          |
 | JavaScript       | [JavaScript.md](./JavaScript.md)             | JavaScript란<br />DOM, DOM 기본 Method, BOM                  |
-| JavaScript Use   | [JavaScript_Use.md](./JavaScript_Use.md)     | JavaScript 활용(DOM 조작)<br />JavaScript 변수(var, const, let) |
+| JavaScript Use   | [JavaScript_Use.md](./JavaScript_Use.md)     | JavaScript 활용(DOM 조작)<br />JavaScript 변수와 식별자<br />JavaScript 데이터 타입<br />JavaScript 연산자 |
