@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Today Dinner!</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+</head>
+
+<body>
+  <div class="my-5 p-4 container d-flex flex-column align-items-center bg-info rounded-3 text-center">
+    <h1 class="mb-5 p-3 w-100 bg-white rounded-3">오늘의 저녁 추천 메뉴는 <span class="text-danger fw-bold">{{ name }}</span>입니다.
+    </h1>
+    <div class="p-3 w-100 bg-white rounded-3" style="height: 20rem;">
+      <img src="{{ img }}" class="h-100" style="object-fit: cover;" alt="food">
+    </div>
+  </div>
+</body>
+
+</html>
