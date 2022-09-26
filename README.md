@@ -11,6 +11,7 @@
 - [Python](./Python) 💨
 - [Data Base](./DB) 💨
 - [Web](./Web) 💨
+- [Django](./Django) 💨
 
 ### ✏ 알고리즘 문제 풀이 🧡
 - [Codeup](./Codeup) 💨
