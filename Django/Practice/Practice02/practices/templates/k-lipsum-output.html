@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %}
+<title>K-lipsum</title>
+{% endblock %}
+
+{% block content %}
+<h1>K-lipsum Print</h1>
+{% for pp in p_list %}
+<p>
+  {% for i in pp %}
+  <span>{{ i }} </span>
+  {% endfor %}
+</p>
+<hr>
+{% endfor %}
+{% endblock %}

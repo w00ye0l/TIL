@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %}
+<title>K-lipsum</title>
+{% endblock %}
+
+{% block content %}
+<h1>K-lipsum</h1>
+<form action="/k-lipsum-output" class="mb-3 p-3 rounded-3 bg-secondary bg-opacity-25">
+  <div class="mb-3">
+    <label for="p_cnt" class="form-label">문단의 수</label>
+    <input type="text" class="form-control" id="p_cnt" name="p_cnt" autofocus>
+  </div>
+  <div class="mb-3">
+    <label for="w_cnt" class="form-label">문단별 단어의 수</label>
+    <input type="text" class="form-control" id="w_cnt" name="w_cnt">
+  </div>
+  <div class="d-flex justify-content-end">
+    <button type="submit" class="btn btn-primary">submit</button>
+  </div>
+</form>
+{% endblock %}

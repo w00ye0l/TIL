@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title %}
+<title>Odd & Even</title>
+{% endblock %}
+
+{% block content %}
+<h1>is-odd-even</h1>
+<h3 class="text-center"><span class="fw-bold text-danger">{{ num }}</span>은(는)<span class="fw-bold">
+    {% if num == 0 %}
+    0
+    {% else %}
+    {% if num|divisibleby:2 %}
+    짝수
+    {% else %}
+    홀수
+    {% endif %}
+    {% endif %}</span>입니다.</h3>
+{% endblock %}

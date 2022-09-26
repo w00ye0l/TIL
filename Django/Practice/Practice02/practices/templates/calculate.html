@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block title %}
+<title>Calculate</title>
+{% endblock %}
+
+{% block content %}
+<h1>Result</h1>
+<div class="container-fluid text-center">
+  <p><span class="fw-bold display-5">{{ num1 }}</span> + <span class="fw-bold display-5">{{ num2 }}</span> = <span
+      class="fw-bold display-5">
+      {{ num1|add:num2 }} </span></p>
+  <hr>
+  {% widthratio num2 1 -1 as s_num2 %}
+  <p><span class="fw-bold display-5">{{ num1 }}</span> - <span class="fw-bold display-5">{{ num2 }}</span> = <span
+      class="fw-bold display-5">
+      {{ num1|add:s_num2 }} </span></p>
+  <hr>
+  <p><span class="fw-bold display-5">{{ num1 }}</span> * <span class="fw-bold display-5">{{ num2 }}</span> = <span
+      class="fw-bold display-5">
+      {% widthratio num1 1 num2 %} </span></p>
+  <hr>
+  <p><span class="fw-bold display-5">{{ num1 }}</span> // <span class="fw-bold display-5"> {{ num2 }}</span> = <span
+      class="fw-bold display-5">
+      {% widthratio num1 num2 1 %} </span></p>
+</div>
+{% endblock %}
