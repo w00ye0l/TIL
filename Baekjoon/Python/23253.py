@@ -9,8 +9,6 @@ for i in range(m):
     ki = int(input())
     stack_ = list(map(int, input().split()))
 
-    print(stack_)
-
     comparison = stack_.pop()
 
     while len(stack_) != 0:
@@ -19,9 +17,5 @@ for i in range(m):
         else:
             sign = 'No'
             break
-
-    # for j in range(ki - 1):
-    #     if stack_[j] < stack_[j + 1]:
-    #         sign = 'No'
 
 print(sign)
