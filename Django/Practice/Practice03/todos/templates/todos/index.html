@@ -1,0 +1,117 @@
+{% extends 'base.html' %}
+
+{% block title %}
+<title>오늘 할 일</title>
+{% endblock%}
+
+{% block content %}
+<section class="my-5 p-3 container bg-success bg-opacity-25 rounded-5 col-lg-8">
+  <h1 class="mb-3 p-3 text-center fw-bold display-3">Todo List</h1>
+
+  <div class="d-flex flex-column justify-content-center align-items-center bg-white p-2 rounded-3">
+    <input type="checkbox" id="check-btn">
+    <label for="check-btn" class="p-2 text-bg-success rounded-3 fs-4">할 일 추가</label>
+
+    <form action="{% url 'todos:create' %}" class="todo-form p-3 w-100 bg-white rounded-3">
+      <div class="input-group mb-3">
+        <label class="input-group-text">할 일</label>
+        <input type="text" name="content___" class="form-control" maxlength="80">
+      </div>
+      <div class="input-group mb-3">
+        <label class="input-group-text">우선 순위</label>
+        <select class="form-select" name="priority___">
+          <option selected value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+        </select>
+      </div>
+      <div class="input-group mb-3">
+        <label class="input-group-text">마감 기한</label>
+        <input type="date" name="deadline___" class="form-control">
+      </div>
+      <div class="d-grid gap-2">
+        <input class="btn btn-primary" type="submit" value="할 일 추가">
+      </div>
+    </form>
+  </div>
+  <hr>
+
+  <table class="table m-0 p-3 bg-white rounded-3 text-center">
+    <thead class="fw-bold">
+      <tr>
+        <th scope="col">우선 순위</th>
+        <th scope="col">할 일</th>
+        <th scope="col">마감 기한</th>
+        <th scope="col">상세</th>
+        <th scope="col">관리</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for todo in todos %}
+      {% if todo.completed == True %}
+      <tr class="p-2 text-decoration-line-through bg-dark text-white rounded-3">
+        {% else %}
+      <tr class="p-2 rounded-3">
+        {% endif %}
+        <td class="fw-bold text-decoration-underline">{{ todo.priority }}</td>
+        <td class="fw-bold fs-5">{{ todo.content }}</td>
+        <td class="fw-light">{{ todo.deadline|date:'y년 m월 d일' }}</td>
+        <td>
+          <!-- Button trigger modal -->
+          <button type="button" class="btn btn-success mx-1 p-1 px-2" data-bs-toggle="modal"
+            data-bs-target="#modal{{ todo.pk }}">
+            상세
+          </button>
+
+          <!-- Modal -->
+          <div class="modal fade" id="modal{{ todo.pk }}" tabindex="-1" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog text-dark">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title fw-bold" id="exampleModalLabel">To do</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <p class="m-0 text-primary">할 일</p>
+                  <h1 class="mb-5 text-primary">{{ todo.content }}</h1>
+                  <div class="mb-3">
+                    <label class="col-form-label fw-bold">마감 기한</label>
+                    <h4 class="text-danger fw-bold">{{ todo.deadline|date:'y년 m월 d일' }}</h4>
+                    <hr>
+                    <label class="col-form-label fw-bold">생성 날짜</label>
+                    <p>{{ todo.created_at|date:'y년 m월 d일' }}</p>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  {% if todo.completed == False %}
+                  <a class="btn btn-primary" href="{% url 'todos:update' todo.pk %}">
+                    Done!
+                  </a>
+                  {% else%}
+                  <a class="btn btn-danger" href="{% url 'todos:update' todo.pk %}">
+                    Not yet..
+                  </a>
+                  {% endif %}
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </td>
+        <td>
+          <a class="btn btn-primary mx-1 p-1 px-2" href="{% url 'todos:update' todo.pk %}">
+            변경
+          </a>
+          <a class="btn btn-danger mx-1 p-1 px-2" href="{% url 'todos:delete' todo.pk %}">
+            삭제
+          </a>
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</section>
+{% endblock%}
