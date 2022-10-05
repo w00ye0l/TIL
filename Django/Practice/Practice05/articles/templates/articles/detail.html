@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load django_bootstrap5 %}
+{% load static %}
+
+{% block title %}
+<title>게시글 확인</title>
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<section>
+  <div class="container p-3 bg-white">
+    <h1 class="mb-5 text-center fw-bold text-decoration-underline">{{ article.title }}</h1>
+    <div class="mb-3 px-3 border border-dark rounded-2">
+      <p class="m-0 fs-5 text-center">{{ article.pk }}번 글</p>
+      <p class="m-0 fw-light text-end">
+        작성: {{ article.created_at|date:"y/m/d H:i" }} | 수정: {{ article.updated_at|date:"y/m/d H:i" }}
+      </p>
+    </div>
+    <hr>
+    <div class="mb-3 p-3 border border-dark rounded-2">
+      <p class="m-0">내용</p>
+      <h2>{{ article.content }} </h2>
+    </div>
+    <hr>
+    <div class="d-flex justify-content-end">
+      <a href="{% url 'articles:update' article.pk %}" class="mx-2 btn btn-primary">수정</a>
+      <a href="{% url 'articles:delete' article.pk %}" class="mx-2 btn btn-danger">삭제</a>
+      <a href="{% url 'articles:index' %}" class="mx-2 btn btn-secondary">홈으로</a>
+    </div>
+  </div>
+</section>
+
+{% endblock %}
