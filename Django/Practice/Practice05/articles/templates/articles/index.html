@@ -3,35 +3,36 @@
 {% load static %}
 
 {% block title %}
-<title>게시판</title>
-<link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <title>게시판</title>
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
 {% endblock %}
 
 {% block content %}
 
-<section>
-  <div class="container p-3 bg-white">
-    <h1 class="text-center fw-bold">게시판</h1>
+  <section>
+    <div class="container p-3 bg-white">
+      <h1 class="text-center fw-bold">게시판</h1>
 
-    <div class="d-flex flex-column align-items-end">
-      <a class="btn btn-primary" href="{% url 'articles:create' %}">작성하기</a>
-    </div>
-
-    <div>
-      {% for article in articles %}
-      <hr>
-      <div class="p-3 text-bg-primary bg-opacity-50 d-flex flex-column justify-contents-between rounded-3">
-        <p class="m-0">제목</p>
-        <h2>
-          <a href="{% url 'articles:detail' article.pk %}" class="text-white text-decoration-none">
-            {{ article.title}}
-          </a>
-        </h2>
-        <p class="my-1 text-end">작성 일자 : {{ article.created_at|date:"Y-m-d H:i" }}</p>
+      <div class="d-flex flex-column align-items-end">
+        <a class="btn btn-primary" href="{% url 'articles:create' %}">작성하기</a>
       </div>
-      {% endfor %}
+
+      <div>
+        {% for article in articles %}
+          <hr>
+          <div class="p-3 text-bg-primary bg-opacity-50 d-flex flex-column justify-contents-between rounded-3">
+            <p class="m-0">제목</p>
+            <h2>
+              <a href="{% url 'articles:detail' article.pk %}" class="text-white text-decoration-none">
+                {{ article.title}}
+              </a>
+            </h2>
+            <p class="my-1 text-end">작성 일자 :
+              {{ article.created_at|date:"Y-m-d H:i" }}</p>
+          </div>
+        {% endfor %}
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
 {% endblock %}

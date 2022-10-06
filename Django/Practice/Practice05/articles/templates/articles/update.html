@@ -3,25 +3,25 @@
 {% load static %}
 
 {% block title %}
-<title>수정하기</title>
-<link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <title>수정하기</title>
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
 {% endblock %}
 
 {% block content %}
-<section>
-  <div class="container p-3 bg-white">
-    <h1 class="mb-5 text-center fw-bold">글 수정하기</h1>
+  <section>
+    <div class="container p-3 bg-white">
+      <h1 class="mb-5 text-center fw-bold">글 수정하기</h1>
 
-    <form action="" method="POST">
-      {% csrf_token %}
-      {% bootstrap_form article_form %}
-      <hr>
-      <div class="d-flex justify-content-end">
-        {% bootstrap_button button_type="submit" content="수정" %}
-        <a href="{% url 'articles:index' %}" class="mx-2 btn btn-secondary">취소</a>
-      </div>
-    </form>
-  </div>
-</section>
+      <form action="" method="POST">
+        {% csrf_token %}
+        {% bootstrap_form article_form %}
+        <hr>
+        <div class="d-flex justify-content-end">
+          {% bootstrap_button button_type = "submit" content = "수정" %}
+          <a href="{% url 'articles:index' %}" class="mx-2 btn btn-secondary">취소</a>
+        </div>
+      </form>
+    </div>
+  </section>
 
 {% endblock %}
