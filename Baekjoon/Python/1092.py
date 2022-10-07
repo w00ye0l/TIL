@@ -15,7 +15,13 @@ if crane[0] < box[0]:
 else:
     while box:
         for c in crane:
-            if box and c >= box[-1]:
+            if not box:
+                break
+
+            elif c < box[-1]:
+                break
+
+            else:
                 for b in box:
                     if c >= b:
                         box.remove(b)

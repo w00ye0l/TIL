@@ -6,9 +6,8 @@ arr = [0] * (max(hole) + 1)
 for h in hole:
     arr[h] += 1
 
-i = 1
 cnt = 0
-while i <= max(hole):
+for i in range(1, max(hole) + 1):
     if arr[i] == 1:
         for j in range(l):
             if i + j > max(hole):
@@ -18,7 +17,5 @@ while i <= max(hole):
                 arr[i + j] -= 1
 
         cnt += 1
-
-    i += 1
 
 print(cnt)
