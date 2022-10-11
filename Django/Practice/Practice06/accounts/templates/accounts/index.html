@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load django_bootstrap5 %}
+
+{% block title %}
+  <title>User List</title>
+{% endblock title %}
+
+{% block content %}
+  <div class="form col-6">
+    <h1>User List</h1>
+
+    <div class="row justify-content-center">
+      {% for user in users %}
+        <div class="mb-3 py-3 user col-lg-6 col-md-12">
+          <div class="dot"></div>
+          <a class="p-2 rounded-pill" href="{% url 'accounts:detail' user.pk %}">
+            {{ user.username }}
+          </a>
+        </div>
+      {% endfor %}
+    </div>
+    <a class="btn" href="{% url 'index' %}">Go Home</a>
+  </div>
+{% endblock content %}

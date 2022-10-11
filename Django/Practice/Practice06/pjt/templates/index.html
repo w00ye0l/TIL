@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load django_bootstrap5 %}
+
+{% block title %}
+  <title>Home</title>
+{% endblock title %}
+
+{% block content %}
+  <div class="form col-6 col-lg-4">
+    <h1>Home</h1>
+
+    <a class="btn" href="{% url 'accounts:signup' %}">Register</a>
+    <a class="btn" href="{% url 'accounts:index' %}">User List</a>
+  </div>
+{% endblock content %}

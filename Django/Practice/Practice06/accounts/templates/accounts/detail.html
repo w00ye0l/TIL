@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load django_bootstrap5 %}
+
+{% block title %}
+  <title>Profile</title>
+{% endblock title %}
+
+{% block content %}
+  <div class="form col-6">
+    <h1>User Profile Num.{{ user.pk }}</h1>
+
+    <div class="d-flex flex-column justify-content-center">
+      <p class="m-0 fw-light">Username</p>
+      <p class="fs-4">
+        {{ user.username }}
+      </p>
+      <hr>
+      <p class="m-0 fw-light">Name</p>
+      <p class="fs-4">
+        {{ user.last_name }}
+        {{ user.first_name }}</p>
+      <hr>
+      <p class="m-0 fw-light">E-mail</p>
+      <p class="fs-4">
+        {{ user.email }}
+      </p>
+    </div>
+    <a class="btn" href="{% url 'accounts:index' %}">Go to List</a>
+  </div>
+{% endblock content %}

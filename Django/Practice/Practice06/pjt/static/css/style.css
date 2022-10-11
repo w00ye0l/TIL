@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap');
+
+* {
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #91e0cb;
+}
+
+.btn {
+  background: #51bb9f;
+  color: #fff;
+}
+
+.form {
+  position:relative;
+  padding: 50px;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  box-shadow: 0 25px 50px rgba(0,0,0,0.5);
+}
+
+.form h1 {
+  border-left: 15px solid #51bb9f;
+  line-height: 1em;
+  padding-left: 1rem;
+  font-weight: 500;
+}
+
+.form input {
+  position:relative;
+  width: 100%;
+  padding: 10px 15px;
+  outline: none;
+  border: 2px solid #555;
+  font-size: 1em;
+  color: #333;
+}
+
+.register {
+  position:relative;
+  padding: 50px;
+  width: 600px;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  box-shadow: 0 25px 50px rgba(0,0,0,0.1);
+}
+
+.register h1 {
+  border-left: 15px solid #51bb9f;
+  line-height: 1em;
+  padding-left: 1rem;
+  font-weight: 500;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+.user {
+  position: relative;
+  left: 40px;
+}
+
+.user>a {
+  border: 3px solid #51bb9f;
+}
+
+.user>a:hover {
+  background-color: #51bb9f;
+  color: #fff;
+}
+
+.dot {
+  position: absolute;
+  top: 20px;
+  left: -20px;
+  width: 20px;
+  line-height: 10px;
+  border: 10px solid #00c48f;
+  border-radius: 50%;
+}
+
