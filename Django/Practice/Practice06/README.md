@@ -122,7 +122,7 @@ def index(request):
     return render(request, "accounts/index.html", context)
 ```
 
-- 0GET` `http://127.0.0.1:8000/accounts/`
+- `GET` `http://127.0.0.1:8000/accounts/`
 - 회원 목록 조회
 
 <br/>
