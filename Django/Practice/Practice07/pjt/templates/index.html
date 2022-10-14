@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% load django_bootstrap5 %}
+
+{% block content %}
+  <section>
+    <h1>Home</h1>
+
+    <a class="btn mx-2 btn-success rounded-pill" href="{% url 'accounts:signup' %}">회원 가입</a>
+    <a class="btn mx-2 btn-success rounded-pill" href="{% url 'accounts:index' %}">회원 목록</a>
+  </section>
+{% endblock content %}

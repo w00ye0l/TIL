@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load django_bootstrap5 %}
+
+{% block login %}{% endblock login %}
+{% block content %}
+  <section>
+    <h1>회원 가입</h1>
+
+    <form action="" method="POST">
+      {% csrf_token %}
+      {% bootstrap_form form %}
+      <input class="btn btn-success" type="submit" value="가입">
+    </form>
+  </section>
+{% endblock content %}

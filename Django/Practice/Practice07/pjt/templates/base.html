@@ -1,0 +1,34 @@
+{% load django_bootstrap5 %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block title %}{% endblock title %}
+    {% bootstrap_css %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  </head>
+
+  <body>
+    {% block login %}
+      {% if request.user.is_authenticated %}
+        <div class="login rounded-pill">
+          <h3>Hello,
+            {{ user }}
+          </h3>
+          <a class="fs-5 fw-bold text-decoration-none text-success" href="{% url 'accounts:logout' %}">로그아웃</a>
+        </div>
+      {% else %}
+        <div class="login rounded-pill">
+          <a class="fs-3 fw-bold text-decoration-none text-success" href="{% url 'accounts:login' %}">로그인</a>
+        </div>
+      {% endif %}
+    {% endblock login %}
+    {% block content %}{% endblock content %}
+  </body>
+
+</html>
