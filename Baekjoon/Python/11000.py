@@ -9,7 +9,7 @@ course = []
 for _ in range(n):
     s, t = map(int, input().split())
 
-    course.append([s, t])
+    course.append((s, t))
 
 course.sort()
 
@@ -20,7 +20,6 @@ for i in range(1, n):
     if course[i][0] < heap[0]:
         heapq.heappush(heap, course[i][1])
     else:
-        heapq.heappop(heap)
-        heapq.heappush(heap, course[i][1])
+        heapq.heapreplace(heap, course[i][1])
 
 print(len(heap))

@@ -48,11 +48,10 @@ for _ in range(n):
     if m < d:
         m = d
 
-# print(arr, m)
 answer = 0
 for i in range(m, 0, -1):
     for x in arr[i]:
-        print(x, arr[i])
+        # print(i, x, arr[i])
         heapq.heappush(heap, -x)
         print(heap)
     if heap:
