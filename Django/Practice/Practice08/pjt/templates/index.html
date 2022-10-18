@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% load django_bootstrap5 %}
+{% load static %}
+
+{% block content %}
+  <div class="row">
+    <div class="col-8">
+      <div class="my-4 d-flex bg-white border rounded-3">
+        {% for article in articles %}
+          <div class="m-3 me-2 d-flex flex-column">
+            <div class="d-flex align-items-center border rounded-circle" style="width:55px; height:55px; background-image:url({{ article.thumbnail.url }}); background-repeat:no-repeat; background-position:center; background-size:contain"></div>
+            <p class="m-0 text-center fw-light">{{ article.title }}</p>
+          </div>
+        {% endfor %}
+      </div>
+      {% for article in articles %}
+        <div class="mb-4 card">
+          <div class="p-2 card-body d-flex flex-row align-items-center border-bottom">
+            <div class="me-3 d-flex align-items-center border rounded-circle" style="width:45px; height:45px; background-image:url({{ article.thumbnail.url }}); background-repeat:no-repeat; background-position:center; background-size:contain"></div>
+            <h5 class="m-0 card-title">{{ article.title }}</h5>
+          </div>
+          <img src="{{ article.image.url }}" alt="">
+          <div class="p-2 card-body d-flex flex-row align-items-center border-top">
+            <p class="me-2 pt-2 fw-bold">{{ article.title }}</p>
+            <p class="pt-2">{{ article.content }}</p>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+    <div class="col-4">
+      <div class="mt-4">
+        <div class="p-3 d-flex align-items-center">
+          <div class="me-3 d-flex align-items-center border rounded-circle" style="width:50px; height:50px; background-image:url({% static 'img/logo.png' %}); background-repeat:no-repeat; background-position:center; background-size:contain"></div>
+          <h5 class="m-0 fw-bold">
+            <a class="text-black text-decoration-none" href="{% url 'articles:index' %}">article__</a>
+          </h5>
+
+        </div>
+      </div>
+      <h5 class="text-secondary">회원님을 위한 추천</h5>
+      {% for article in articles %}
+        <div class="mb-3 px-3 d-flex align-items-center">
+          <div class="me-3 d-flex align-items-center border rounded-circle" style="width:50px; height:50px; background-image:url({{ article.thumbnail.url }}); background-repeat:no-repeat; background-position:center; background-size:contain"></div>
+          <h5 class="m-0 fw-bold">{{ article.title }}</h5>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+{% endblock content %}
