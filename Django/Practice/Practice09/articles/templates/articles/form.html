@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load django_bootstrap5 %}
+
+{% block content %}
+  <div class="mt-3 p-5 border border-3">
+    {% if request.resolver_match.url_name == 'create' %}
+      <h1>게시글 작성</h1>
+    {% else %}
+      <h1>게시글 수정</h1>
+    {% endif %}
+
+    <form action="" method="POST" enctype="multipart/form-data">
+      {% csrf_token %}
+      {% bootstrap_form article_form %}
+      {% if request.resolver_match.url_name == 'create' %}
+        <input class="btn btn-primary" type="submit" value="작성">
+        <a class="btn btn-primary" href="{% url 'accounts:detail' request.user.pk %}">취소</a>
+      {% else %}
+        <input class="btn btn-primary" type="submit" value="수정">
+        <a class="btn btn-primary" href="{% url 'accounts:detail' request.user.pk %}">취소</a>
+      {% endif %}
+    </form>
+  </div>
+{% endblock content %}

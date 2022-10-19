@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% load django_bootstrap5 %}
+{% load static %}
+
+{% block css %}
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+{% endblock css %}
+
+{% block navbar %}{% endblock navbar %}
+
+{% block content %}
+  <div class="row">
+    {% comment %} left {% endcomment %}
+    <div class="col-6 position-relative">
+      <img class="img-fluid" src="{% static 'img/banner1.png' %}" alt="banner" style="width:31.7007vw; z-index: auto;">
+      <div id="carouselExampleFade" class="carousel slide carousel-fade position-absolute" data-bs-ride="carousel" style="z-index: 1; width: 17.0068vw; bottom:4.7619vw; right:14.1143vw;">
+        <div class="carousel-inner">
+          <div class="carousel-item active" data-bs-interval="2000">
+            <img src="{% static 'img/banner_inner1.png' %}" class="img-fluid" alt="...">
+          </div>
+          <div class="carousel-item" data-bs-interval="2000">
+            <img src="{% static 'img/banner_inner2.png' %}" class="img-fluid" alt="...">
+          </div>
+          <div class="carousel-item" data-bs-interval="2000">
+            <img src="{% static 'img/banner_inner3.png' %}" class="img-fluid" alt="...">
+          </div>
+        </div>
+      </div>
+    </div>
+    {% comment %} right {% endcomment %}
+    <div class="col-6 d-flex justify-content-center align-items-center bg-white border border-1">
+      <div class="d-flex flex-column h-100 w-100 justify-content-between">
+        <div class="col-6 m-auto py-4 g-row-6">
+          <img class="my-3 w-100" src="{% static 'img/logo.png' %}" alt="logo">
+        </div>
+        <div class="mb-5 d-flex flex-column h-100 justify-content-evenly">
+          <a class="btn btn-primary p-2" href="{% url 'accounts:login' %}">로그인</a>
+          <a class="btn btn-primary p-2" href="{% url 'accounts:signup' %}">회원가입</a>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock content %}

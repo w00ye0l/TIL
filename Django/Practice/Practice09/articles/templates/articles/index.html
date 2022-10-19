@@ -1,0 +1,81 @@
+{% extends 'base.html' %}
+{% load django_bootstrap5 %}
+{% load static %}
+
+{% block content %}
+  <div class="row">
+    {% comment %} aside first {% endcomment %}
+    <div class="col-8">
+      {% comment %} story section {% endcomment %}
+      <div class="my-4 d-flex bg-white border rounded-3">
+        {% for user in users %}
+          <a class="text-decoration-none text-black" href="{% url 'accounts:detail' user.pk %}">
+            <div class="m-3 me-2 d-flex flex-column">
+              <div class="d-flex align-items-center border rounded-circle" style="width:55px; height:55px; background-image:url({{ user.profile_image.url }}); background-repeat:no-repeat; background-position:center; background-size:contain"></div>
+              <p class="m-0 text-center fw-light">{{ user.username }}</p>
+            </div>
+          </a>
+        {% endfor %}
+      </div>
+      
+      {% comment %} articles section {% endcomment %}
+      {% for article in articles %}
+        <div class="mb-4 card">
+          {% comment %} 작성자 헤더 {% endcomment %}
+          <a class="text-decoration-none text-black" href="{% url 'accounts:detail' article.user.pk %}">
+            <div class="p-2 card-body d-flex flex-row align-items-center border-bottom">
+              <div class="me-3 d-flex align-items-center border rounded-circle" style="width:45px; height:45px; background-image:url({{ article.user.profile_image.url }}); background-repeat:no-repeat; background-position:center; background-size:contain">
+              </div>
+              <h5 class="m-0 card-title fw-bold">
+                {{ article.user.username }}
+              </h5>
+            </div>
+          </a>
+          
+          <img src="{{ article.image.url }}" alt="">
+
+          {% comment %} 작성자 {% endcomment %}
+          <div class="p-2 card-body d-flex flex-row align-items-center border-top">
+            <a class="mb-0 me-2 pt-2 fw-bold text-decoration-none text-black" href="{% url 'accounts:detail' article.user.pk %}">{{ article.user.username }}
+            </a>
+            <p class="mb-0 pt-2">{{ article.title }}</p>
+          </div>
+          {% comment %} 댓글 {% endcomment %}
+          <div class="p-2 card-body border-top">
+            <a class="m-0 text-secondary text-decoration-none" href="{% url 'articles:detail' article.pk %}">댓글 더보기</a>
+            <div class="p-0 card-body d-flex flex-row align-items-center">
+              <p class="m-0">
+                <span class="fw-bold">
+                  {{ article.comment_set.all.last.user.username }}</span>
+                  {{ article.comment_set.all.last.content }}
+              </p>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+          
+    {% comment %} aside second {% endcomment %}
+    <div class="col-4">
+      {% if request.user.is_authenticated %}
+        <div class="mt-4">
+          <a class="text-black text-decoration-none" href="{% url 'accounts:detail' request.user.pk %}">
+            <div class="p-3 d-flex align-items-center">
+              <div class="me-3 d-flex align-items-center border rounded-circle" style="width:50px; height:50px; background-image:url({{ user.profile_image.url }}); background-repeat:no-repeat; background-position:center; background-size:contain"></div>
+              <h5 class="m-0 fw-bold">
+                {{ request.user.username }}
+              </h5>
+            </div>
+          </a>
+        </div>
+      {% endif %}
+      <h5 class="mt-4 text-secondary">회원님을 위한 추천</h5>
+      {% for user in users %}
+        <div class="mb-3 px-3 d-flex align-items-center">
+          <div class="me-3 d-flex align-items-center border rounded-circle" style="width:50px; height:50px; background-image:url({{ user.profile_image.url }}); background-repeat:no-repeat; background-position:center; background-size:contain"></div>
+          <h5 class="m-0 fw-bold">{{ user.username }}</h5>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+{% endblock content %}
