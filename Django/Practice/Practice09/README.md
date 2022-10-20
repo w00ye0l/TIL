@@ -442,7 +442,7 @@ article.comment_set.method()
       {{ comment.user }} - {{ comment.content }}
       
       {% if request.user == comment.user %}
-        <form action="{% url 'articles:comments_delete' article_pk comment_pk %}" method="POST">
+        <form action="{% url 'articles:comments_delete' article.pk comment.pk %}" method="POST">
           {% csrf_token %}
           <input type="submit" value="DELETE">
         </form>
