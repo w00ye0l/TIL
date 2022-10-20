@@ -283,7 +283,7 @@ article.comment_set.method()
 
   ```python
   urlpatterns = [
-      path('<int:article_pk>/comments/<int:comment_pk>/delete', views.comments_delete, name="comments_delete"),
+      path('<int:article_pk>/comments/<int:comment_pk>/delete/', views.comments_delete, name="comments_delete"),
   ]
   ```
 
@@ -304,7 +304,7 @@ article.comment_set.method()
   {% for comment in comments %}
     <li>
       {{ comment.content }}
-      <form action="{% url 'articles:comments_delete' article_pk comment_pk %}" method="POST">
+      <form action="{% url 'articles:comments_delete' article.pk comment.pk %}" method="POST">
         {% csrf_token %}
         <input type="submit" value="DELETE">
       </form>
