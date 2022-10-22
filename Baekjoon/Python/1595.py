@@ -7,7 +7,7 @@ input = sys.stdin.readline
 def bfs(start):
     queue = deque()
     queue.append((start, 0))
-    visited = [0 for __ in range(10001)]
+    visited = [0 for _ in range(10001)]
     visited[start] = 1
     max_dis = 0
     target = 0
