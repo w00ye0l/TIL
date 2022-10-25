@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+{% load django_bootstrap5 %}
+
+{% block content %}
+  <div class="row m-0 w-100 d-flex align-items-center bg-black bg-opacity-25 border border-2">
+    <div class="col-7 p-0">
+      <img class="img-fluid" src="{{ article.image.url }}" alt="{{ article.image }}" width="100%" height="auto">
+    </div>
+
+    <div class="col-5 bg-white d-flex flex-column justify-content-start h-100">
+      <div class="d-flex justify-content-between align-items-center">
+        <h3 class="mt-3 fw-bold">{{ article.title }}</h3>
+        <div class="d-flex justify-content-end">
+          <a class="m-1 btn btn-warning" href="{% url 'articles:update' article.pk %}">수정</a>
+          <a class="m-1 btn btn-danger" href="{% url 'articles:delete' article.pk %}">삭제</a>
+        </div>
+      </div>
+      <hr>
+
+      <p class="mt-3">{{ article.content }}</p>
+      <hr>
+
+      {% for comment in comments %}
+        <div class="d-flex justify-content-between">
+          <div class="mb-3 d-flex">
+            <div class="me-3 d-flex align-items-center border rounded-circle" style="width:30px; height:30px; background-image:url({{ comment.user.profile_image.url }}); background-repeat:no-repeat; background-position:center; background-size:contain"></div>
+            <span class="fw-bold me-3">{{ comment.user.username }}</span>
+            {{ comment.content }}
+          </div>
+          <div>
+            {% if comment.user == request.user %}
+              <div>
+                <a class="text-black" href="{% url 'articles:comment_delete' article.pk comment.pk  %}">
+                  <i class="bi bi-x-lg"></i>
+                </a>
+              </div>
+            {% endif %}
+          </div>
+        </div>
+        {% empty %}
+        <p>...</p>
+      {% endfor %}
+      <hr>
+
+      {% comment %} 좋아요 {% endcomment %}
+      <div class="d-flex align-items-center">
+        {% if request.user not in article.like_users.all %}
+          <a class="fs-4 text-decoration-none text-dark" href="{% url 'articles:like' article.pk %}" style="">
+            <i class="bi bi-suit-heart"></i>
+          </a>
+        {% else %}
+          <a class="fs-4 text-decoration-none" href="{% url 'articles:like' article.pk %}">
+            <i class="bi bi-suit-heart-fill" style="color:red;"></i>
+          </a>
+        {% endif %}
+
+        <span class="ms-2">{{ article.like_users.all|first }}</span>
+        {% if article.like_users.all.count > 1 %}
+          님 외
+          {{ article.like_users.all|length|add:"-1" }}명이 좋아합니다
+        {% elif article.like_users.all.count == 1 %}
+          님이 좋아합니다
+        {% endif %}
+      </div>
+
+      <hr>
+      <form class="mb-3" action="{% url 'articles:comment_create' article.pk %}" method="POST">
+        {% csrf_token %}
+        <div class="mb-2 d-flex align-items-center position-relative">
+          <input type="text" class="form-control py-0" id="comment" placeholder="댓글 달기.." name="content" style="height:2rem;">
+          <input class="position-absolute text-primary bg-white" type="submit" value="게시" style="right:2px; border:none; height:1.5rem;">
+        </div>
+      </form>
+    </div>
+  </div>
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load django_bootstrap5 %}
+{% load static %}
+
+{% block css %}
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+{% endblock css %}
+
+{% block navbar %}{% endblock navbar %}
+
+{% block content %}
+  <div class="col-4 m-auto p-5 d-flex flex-column align-items-center border border-3">
+    <img class="mb-4" src="{% static 'img/logo.png' %}" alt="">
+
+    <form class="w-100" action="" method="POST" enctype="multipart/form-data">
+      {% csrf_token %}
+      {% bootstrap_form form %}
+      <input class="btn btn-primary mb-3 w-100" type="submit" value="로그인">
+      <a class="btn btn-primary mb-3 w-100" href="{% url 'main' %}">취소</a>
+      <div class="text-center">
+        <a class="text-secondary" href="{% url 'accounts:signup' %}">아직 회원이 아니신가요?</a>
+      </div>
+    </form>
+  </div>
+{% endblock content %}

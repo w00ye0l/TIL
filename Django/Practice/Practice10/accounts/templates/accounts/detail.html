@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+{% load django_bootstrap5 %}
+{% load static %}
+
+{% block content %}
+  <div class="container-fluid flex-column">
+    <div class="d-flex d-flex justify-content-center align-items-center">
+      <div class="col-4 d-flex justify-content-center align-items-center">
+        <div class="my-5 d-flex justify-content-center align-items-center border col-8 rounded-circle bg-white" style="width: 150px; height:150px; background-image:url({{ user.profile_image.url }}); background-repeat:no-repeat; background-position:center; background-size:contain"></div>
+      </div>
+      <div class="col-8">
+        <div class="mb-3 d-flex justify-content-start">
+          <div class="d-flex align-items-center">
+            <h2 class="fw-light">{{ user.username }}</h2>
+            <a href="#">
+              <i class="bi bi-patch-check-fill mx-3 color-blue"></i>
+            </a>
+          </div>
+          <div class="d-flex align-items-center">
+            {% if request.user != user %}
+              {% if request.user in user.followers.all %}
+                <a class="mx-2 btn border fw-bold" href="{% url 'accounts:follow' user.pk %}">팔로우 취소</a>
+              {% else %}
+                <a class="mx-2 btn border fw-bold" href="{% url 'accounts:follow' user.pk %}">팔로우</a>
+              {% endif %}
+            {% else %}
+              <a class="mx-2 btn border fw-bold" href="#">프로필 편집</a>
+              <a class="mx-2 btn border fw-bold" href="{% url 'articles:create' %}">글 작성</a>
+            {% endif %}
+          </div>
+        </div>
+        <div class="d-flex justify-content-start">
+          <div class="me-5">
+            <p class="fs-6">게시물<span class="ms-2 fw-bold">{{ user.article_set.count }}</span></p>
+          </div>
+          <div class="me-5">
+            <p class="fs-6">팔로워<span class="ms-2 fw-bold">{{ user.followers.count }}</span></p>
+          </div>
+          <div class="me-5">
+            <p class="fs-6">팔로우<span class="ms-2 fw-bold">{{ user.followings.count }}</span></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-12 m-auto border-top">
+      <div class="m-auto d-flex justify-content-center">
+        <a class="mx-5 py-3 text-decoration-none text-black fw-bold border-top border-dark" href="#">게시물</a>
+        <a class="mx-5 py-3 text-decoration-none text-black" href="#">릴스</a>
+        <a class="mx-5 py-3 text-decoration-none text-black" href="#">태그됨</a>
+      </div>
+    </div>
+    <div class="row m-auto">
+      {% for article in articles %}
+        <div class="col-4 mb-4">
+          <a href="{% url 'articles:detail' article.pk %}">
+            <div class="card border-0 shadow-sm">
+              <img src="{{ article.thumbnail.url }}" class="card-img rounded-0" alt="image">
+            </div>
+          </a>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+
+{% endblock content %}
