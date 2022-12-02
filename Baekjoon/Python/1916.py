@@ -8,10 +8,10 @@ INF = sys.maxsize
 def dijkstra(start):
     cost[start] = 0
     heap = []
-    heapq.heappush(heap, [0, start])
+    heapq.heappush(heap, [start, 0])
 
     while heap:
-        weight, now = heapq.heappop(heap)
+        now, weight = heapq.heappop(heap)
 
         if cost[now] < weight:
             continue
@@ -21,7 +21,7 @@ def dijkstra(start):
 
             if cost[adj] > new_weight:
                 cost[adj] = new_weight
-                heapq.heappush(heap, [new_weight, adj])
+                heapq.heappush(heap, [adj, new_weight])
 
 
 n = int(input())
