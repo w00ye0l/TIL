@@ -1,8 +1,8 @@
-n, kim, im = map(int, input().split())
+n, kim, lim = map(int, input().split())
 
 arr = [0 for _ in range(n)]
 arr[kim - 1] = 1
-arr[im - 1] = 1
+arr[lim - 1] = 1
 
 cnt = 0
 flag = False
