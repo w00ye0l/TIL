@@ -2,6 +2,7 @@ from itertools import combinations
 
 arr = list(input())
 
+# idx = [i for i in range(len(arr))]
 idx = [i for i in range(len(arr) - 1)]
 idx_pick = list(combinations(idx, 2))
 
