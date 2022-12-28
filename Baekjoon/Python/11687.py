@@ -11,6 +11,8 @@ def binary_search(m):
         cnt = 0
         mid = (start + end) // 2
 
+        # 5로 나눈 몫
+        # 5의 제곱수는 또 한 번씩 더해줌
         i = 5
         while i <= mid:
             cnt += mid // i
