@@ -16,4 +16,4 @@ for i in range(2, n + 1):
         arr[i][1] = arr[i // 2][1] + [i]
 
 print(arr[n][0])
-print(*arr[n][1][::-1])
+print(*reversed(arr[n][1]))
