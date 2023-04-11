@@ -2,23 +2,37 @@ import sys
 
 input = sys.stdin.readline
 
+
+def cal():
+    global answer
+
+    n1, n2, n3 = visited[0], visited[1], visited[2]
+    a = (n1[0] - n2[0]) ** 2 + (n1[1] - n2[1]) ** 2
+    b = (n2[0] - n3[0]) ** 2 + (n2[1] - n3[1]) ** 2
+    c = (n3[0] - n1[0]) ** 2 + (n3[1] - n1[1]) ** 2
+
+    if 2 * max(a, b, c) == a + b + c:
+        answer += 1
+
+
+def bt(cnt, start):
+    if cnt == 3:
+        return cal()
+
+    for i in range(start, n):
+        visited[cnt] = node[i]
+        bt(cnt + 1, i + 1)
+
+
 n = int(input())
 
 node = []
-result = 0
+answer = 0
+visited = [0] * 3
 
 for _ in range(n):
     node.append(tuple(map(int, input().split())))
 
-for i in range(n - 2):
-    for j in range(i + 1, n - 1):
-        for k in range(j + 1, n):
-            n1, n2, n3 = node[i], node[j], node[k]
-            a = (n1[0] - n2[0]) ** 2 + (n1[1] - n2[1]) ** 2
-            b = (n2[0] - n3[0]) ** 2 + (n2[1] - n3[1]) ** 2
-            c = (n3[0] - n1[0]) ** 2 + (n3[1] - n1[1]) ** 2
+bt(0, 0)
 
-            if 2 * max(a, b, c) == a + b + c:
-                result += 1
-
-print(result)
+print(answer)
