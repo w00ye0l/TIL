@@ -1,5 +1,4 @@
 import sys
-from heapq import heappop, heapify
 
 input = sys.stdin.readline
 
@@ -10,7 +9,7 @@ arr = []
 for _ in range(N):
     arr.append(int(input()))
 
-heap = heapify(arr)
+arr.sort()
 
-while arr:
-    print(heappop(arr))
+for a in arr:
+    print(a)
