@@ -7,7 +7,6 @@ def bt(cnt):
     if cnt == 15:
         if sum(map(sum, result)) == 0:
             ans = 1
-            return
         return
 
     i, j = game[cnt]
