@@ -13,6 +13,7 @@
 - [Django](./Django) 💨
 - [Vue.js](./Vue.js) 💨
 - [React.js](./React.js) 💨
+- [TypeScript](./TypeScript) 💨
 
 ### ✏ 알고리즘 문제 풀이 🧡
 
