@@ -14,6 +14,7 @@
 - [Vue.js](./Vue.js) 💨
 - [React.js](./React.js) 💨
 - [TypeScript](./TypeScript) 💨
+- [Dart](./Dart) 💨
 
 ### ✏ 알고리즘 문제 풀이 🧡
 
