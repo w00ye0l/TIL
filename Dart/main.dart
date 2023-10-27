@@ -1,5 +1,9 @@
-void main() {
-  var name = '12121';
+typedef UserInfo = Map<String, String>;
 
-  name.indexOf(pattern)
+String sayHi(UserInfo userInfo) {
+  return "Hi ${userInfo['name']}";
+}
+
+void main() {
+  print(sayHi({"name": 'kim'}));
 }
