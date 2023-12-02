@@ -11,25 +11,8 @@ def solution():
         for j in range(i, -1, -1):
             num = arr[i] - arr[j]
 
-            if bs(num):
+            if num in sumL:
                 return arr[i]
-
-
-# 이분 탐색
-def bs(num):
-    l, r = 0, len(sumL)
-
-    while l <= r:
-        m = (l + r) // 2
-
-        if num == sumL[m]:
-            return True
-        elif num > sumL[m]:
-            l = m + 1
-        elif num < sumL[m]:
-            r = m - 1
-
-    return False
 
 
 N = int(input())
@@ -42,7 +25,5 @@ arr.sort()
 for i in range(N):
     for j in range(i, N):
         sumL.add(arr[i] + arr[j])
-
-sumL = sorted(list(sumL))
 
 print(solution())
