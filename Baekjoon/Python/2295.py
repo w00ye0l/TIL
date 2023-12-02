@@ -1,4 +1,5 @@
 import sys
+from itertools import combinations_with_replacement
 
 input = sys.stdin.readline
 
@@ -17,13 +18,8 @@ def solution():
 
 N = int(input())
 arr = [int(input()) for _ in range(N)]
-sumL = set()
 
 arr.sort()
-
-# 두 수의 합 리스트 생성
-for i in range(N):
-    for j in range(i, N):
-        sumL.add(arr[i] + arr[j])
+sumL = {x + y for x, y in combinations_with_replacement(arr, 2)}
 
 print(solution())
