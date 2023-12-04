@@ -1,4 +1,7 @@
+import sys
 from collections import deque
+
+input = sys.stdin.readline
 
 
 def move(coin):
@@ -6,7 +9,7 @@ def move(coin):
     dy = [0, 0, -1, 1]
 
     Q = deque()
-    Q.append([coin, 0])
+    Q.append((coin, 0))
     visited = []
 
     while Q:
@@ -35,13 +38,13 @@ def move(coin):
                     return cnt + 1
                 elif c == 0:
                     if not newCoins in visited:
-                        Q.append([newCoins, cnt + 1])
+                        Q.append((newCoins, cnt + 1))
 
     return -1
 
 
 N, M = map(int, input().split())
-graph = [list(input()) for _ in range(N)]
+graph = [list(input().rstrip()) for _ in range(N)]
 
 coin = []
 
